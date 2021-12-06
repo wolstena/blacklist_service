@@ -22,7 +22,7 @@ services:
 ```
 ## Run some tests
 ```
-python -m pytest
+python -m pytest -v
 ```
 
 ## Build docker image
