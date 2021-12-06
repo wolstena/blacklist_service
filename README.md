@@ -52,9 +52,9 @@ CONTAINER ID   IMAGE                      COMMAND                  CREATED      
 b1891791ea61   mongo:5.0.4                "docker-entrypoint.s…"   2 minutes ago   Up About a minute   0.0.0.0:27017->27017/tcp   mongo
 ```
 
-After the application starts:
+## After the application starts
 
-Not what you would want in a production server but to add test data to mongo navigate to `http://localhost:5000/add_test_data` in your web browser or run:
+Not what you would want in a production server, add test data to mongo navigate to `http://localhost:5000/add_test_data` in your web browser or run:
 ```
 $ curl localhost:5000/add_test_data
 status	200
@@ -62,25 +62,25 @@ success	true
 
 ```
 
-To begin testing urls
+To begin testing urls:
 ```
-$ curl localhost:5000/urlinf/1/www.sfu.ca/about/economic-recovery/1-10.html
+$ curl localhost:5000/urlinfo/1/www.sfu.ca/about/economic-recovery/1-10.html
 status	200
 success	false
 ```
 
-Test URLs
-www.sfu.ca/about/economic-recovery/1-10.html
-www.sfu.ca%2Fabout%2Feconomic-recovery%2F1-10.html
+Test URLs:
 
-ubc.ca/academics/
-ubc.ca%2Facademics%2F
+* www.sf*u.ca/about/economic-recovery/1-10.html
+* ubc.ca/academics/
+* umbrella.cisco.com/?dtid=osscdc000283
+* www.geeksforgeeks.org:443/python-build-a-rest-api-using-flask/
 
-umbrella.cisco.com/?dtid=osscdc000283
-umbrella.cisco.com%2F%3Fdtid%3Dosscdc000283
-
-www.geeksforgeeks.org:443/python-build-a-rest-api-using-flask/
-www.geeksforgeeks.org%3A443%2Fpython-build-a-rest-api-using-flask%2F
+Encoded Versions store in Mongo:
+* www.sfu.ca%2Fabout%2Feconomic-recovery%2F1-10.html
+* ubc.ca%2Facademics%2F
+* umbrella.cisco.com%2F%3Fdtid%3Dosscdc000283
+* www.geeksforgeeks.org%3A443%2Fpython-build-a-rest-api-using-flask%2F
 
 
 Stop and remove the containers
