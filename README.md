@@ -87,3 +87,14 @@ Stop and remove the containers
 ```
 $ docker-compose down
 ```
+
+## Abbreviated Roadmap
+
+* Fix failed tests
+* Add additional unit and functional tests
+* Improve exception handling
+* Migrate to open api
+* Add CRUD operations
+* Improve security (eg authentication, tls, etc...)
+* Add configuration management
+* Add some instrumentation
