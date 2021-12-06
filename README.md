@@ -52,7 +52,9 @@ CONTAINER ID   IMAGE                      COMMAND                  CREATED      
 b1891791ea61   mongo:5.0.4                "docker-entrypoint.s…"   2 minutes ago   Up About a minute   0.0.0.0:27017->27017/tcp   mongo
 ```
 
-After the application starts, to add test data to mongo navigate to `http://localhost:5000/add_test_data` in your web browser or run:
+After the application starts:
+
+Not what you would want in a production server but to add test data to mongo navigate to `http://localhost:5000/add_test_data` in your web browser or run:
 ```
 $ curl localhost:5000/add_test_data
 status	200
@@ -65,7 +67,7 @@ To begin testing urls
 $ curl localhost:5000/urlinf/1/www.sfu.ca/about/economic-recovery/1-10.html
 status	200
 success	false
-``
+```
 
 Test URLs
 www.sfu.ca/about/economic-recovery/1-10.html
