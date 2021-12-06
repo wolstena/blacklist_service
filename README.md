@@ -71,7 +71,7 @@ success	false
 
 Test URLs:
 
-* www.sf*u.ca/about/economic-recovery/1-10.html
+* www.sfu.ca/about/economic-recovery/1-10.html
 * ubc.ca/academics/
 * umbrella.cisco.com/?dtid=osscdc000283
 * www.geeksforgeeks.org:443/python-build-a-rest-api-using-flask/
