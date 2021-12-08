@@ -1,4 +1,3 @@
-
 import pytest
 from app import app
 
@@ -34,7 +33,7 @@ def test_blacklist_no_query(client):
 
 
 def test_blacklist_approved(client):
-    resp = client.get('/urlinfo/1/www.sfu.ca/about/economic-recovery/1-10.html')
+    resp = client.get('/urlinfo/1/www.sfu.ca/about/economic-recovery/1-10.html')  # noqa: E501
     assert resp.status_code == 200
     assert isinstance(resp.json, dict)
     assert resp.json.get('approved')
@@ -42,7 +41,7 @@ def test_blacklist_approved(client):
 
 
 def test_blacklist_not_approved(client):
-    resp = client.get('/urlinfo/1/www.sfu.ca:443/cgi-bin/test.pl?first=first_tst&second=second-value')
+    resp = client.get('/urlinfo/1/www.sfu.ca:443/cgi-bin/test.pl?first=first_tst&second=second-value')  # noqa: E501
     assert resp.status_code == 200
     assert isinstance(resp.json, dict)
     assert not resp.json.get('approved')

@@ -151,7 +151,6 @@ def mongodb_connect():
         log.error("Unknown connection error")
 
 
-
 def lookup_url(url):
     """
     This function encodes the supplied url and
@@ -202,12 +201,12 @@ def add_mongo_test_data():
 
     # Small set of test data
     url_info = [
-        {'url': 'www.sfu.ca%2Fabout%2Feconomic-recovery%2F1-10.html', 'approved': True},
+        {'url': 'www.sfu.ca%2Fabout%2Feconomic-recovery%2F1-10.html', 'approved': True},   # noqa: E501
         {'url': 'ubc.ca%2Facademics%2F', 'approved': True},
-        {'url': 'umbrella.cisco.com%2F%3Fdtid%3Dosscdc000283', 'approved': True},
-        {'url': 'www.geeksforgeeks.org%3A443%2Fpython-build-a-rest-api-using-flask%2F', 'approved': True},
+        {'url': 'umbrella.cisco.com%2F%3Fdtid%3Dosscdc000283', 'approved': True},  # noqa: E501
+        {'url': 'www.geeksforgeeks.org%3A443%2Fpython-build-a-rest-api-using-flask%2F', 'approved': True},  # noqa: E501
         {'url': 'www.central1.com:443/cgi-bin/badstuff.pl', 'approved': True}
-    ]
+    ]  # noqa: E501
 
     conn = mongodb_connect()
     if conn is None:
