@@ -2,6 +2,7 @@
 import pytest
 from app import app
 
+
 @pytest.fixture
 def client():
     return app.test_client()
@@ -10,16 +11,19 @@ def client():
 def test_home(client):
     resp = client.get('/')
     assert resp.status_code == 200
- 
+
+
 def test_blacklist_bad_http_method(client):
     resp = client.post('/urlinfo/1/www.sfu.ca')
     assert resp.status_code == 405
+
 
 def test_blacklist_no_content(client):
     resp = client.get('/urlinfo/1/')
     assert resp.status_code == 404
     assert isinstance(resp.json, dict)
     assert resp.json.get('status', 404)
+
 
 def test_blacklist_no_query(client):
     resp = client.get('/urlinfo/1/www.sfu.ca')
@@ -35,7 +39,7 @@ def test_blacklist_approved(client):
     assert isinstance(resp.json, dict)
     assert resp.json.get('approved')
     assert resp.json.get('status', 200)
-   
+
 
 def test_blacklist_not_approved(client):
     resp = client.get('/urlinfo/1/www.sfu.ca:443/cgi-bin/test.pl?first=first_tst&second=second-value')
