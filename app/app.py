@@ -147,8 +147,8 @@ def mongodb_connect():
         log.error("Cannot connect to database")
     except ServerSelectionTimeoutError:
         log.error("Connection to database timedout")
-    except:
-        log.error("Unknown connection error")
+    except Exception as e:
+        log.error(f"Connection to database timedout: {e}")
 
 
 def lookup_url(url):
@@ -238,8 +238,8 @@ def add_mongo_test_data():
         log.debug(f"number of records added: {len(result.inserted_ids)}")
 
         return True
-    except:
-        log.warning("could not add records to mongo")
+    except Exception as e:
+        log.warning(f"could not add records to mongo: {e}")
         return False
     finally:
         conn.close()
